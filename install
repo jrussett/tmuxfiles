@@ -28,7 +28,7 @@ main() {
     dir="$(cd "${dir}"/.. && pwd)"
   fi
 
-  if [[ -f ~/.tmux.conf && "$(readlink -f ~/.tmux.conf)" != "$dir/tmux.conf" ]]; then
+  if [[ -f ~/.tmux.conf && "$(greadlink -f ~/.tmux.conf)" != "$dir/tmux.conf" ]]; then
     echo -n "Existing ~/.tmux.conf found. Overwrite? (y/N) "
     read -r response
     if [[ "${response}" == "y" ]]; then
